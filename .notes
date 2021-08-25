@@ -1,0 +1,20 @@
+// on page load, fetches the images using the url above
+fetch(imgUrl)
+// parses the response as `JSON`
+.then(resp => resp.json())
+.then(images => {
+  const imgs = images.message
+  // take this array of images
+  // turn it into img elements
+  let imgsArray = imgs.map((img) => {
+    let i = `<img src=${img}>`
+    return i 
+  })
+  //append each img element to the dom 
+  imgsArray.forEach(element => {
+    container.innerHTML += element
+  });
+})
+
+
+Challenge 1 un-refactored...
